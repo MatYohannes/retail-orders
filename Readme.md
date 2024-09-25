@@ -82,7 +82,7 @@ The Data folder contains:
 ## Dashboard Screenshot
 
 [View my Tableau Dashboard](https://public.tableau.com/app/profile/mathewos.yohannes/viz/Retail-Orders/Dashboard1?publish=yes)
-![Retail Orders Dashboard](screenshots/dashboard.png)
+[Retail Orders Dashboard](screenshots/dashboard.png)
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any improvements or suggestions.

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+STACK_NAME="Retail-Order-VPC"
+TEMPLATE_FILE="vpc-template.yaml"
+REGION="us-west-1"
+
+echo "== Deploying VPC stack: $STACK_NAME =="
+
+# Check if the stack already exists
+if aws cloudformation describe-stacks --stack-name $STACK_NAME --region $REGION > /dev/null 2>&1; then
+  echo "== Stack $STACK_NAME already exists. Updating the stack =="
+  aws cloudformation update-stack \
+    --stack-name $STACK_NAME \
+    --template-body file://$TEMPLATE_FILE \
+    --capabilities CAPABILITY_NAMED_IAM \
+    --region $REGION
+else
+  echo "== Creating a new stack: $STACK_NAME =="
+  aws cloudformation create-stack \
+    --template-body file://$TEMPLATE_FILE \
+    --capabilities CAPABILITY_NAMED_IAM \
+    --region $REGION \
+    --stack-name $STACK_NAME
+fi
+
+echo "== Deployment complete =="

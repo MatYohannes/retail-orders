@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+echo "== deploy rds"
+
+STACK_NAME="rds-retail-orders"
+IP_ADDRESS="23.240.215.75/32"
+RDS_SECRET_ARN_ID="arn:aws:secretsmanager:us-west-1:014498645771:secret:MyRdsRetailSecret-71mMfd"
+USERNAME="storemanager"
+
+aws cloudformation deploy \
+--template-file rds-template.yaml \
+--capabilities CAPABILITY_NAMED_IAM \
+--parameter-overrides UserIpAddress="$IP_ADDRESS" RdsSecretArn="$RDS_SECRET_ARN_ID" Username="$USERNAME" \
+--region us-west-1 \
+--stack-name $STACK_NAME
+
+# psql -h <INSERT RDS endpoint>  -U storemanager -d retailordersdb -p 5432

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+if [ "$#" -ne 2 ]; then
+  echo "Usage: $0 <vpc-stack-name> <rds-stack-name>"
+  exit 1
+fi
+
+# Assign argument to variable
+VPC_STACK_NAME=$1
+RDS_STACK_NAME=$2
+
+echo "== Deleting RDS Stack: $RDS_STACK_NAME"
+
+sam delete --stack-name "$RDS_STACK_NAME"
+
+echo "== Deleted RDS Stack: $RDS_STACK_NAME"
+
+echo "== Deleting VPC Stack: $VPC_STACK_NAME"
+
+sam delete --stack-name "$VPC_STACK_NAME"
+
+echo "== Deleted VPC Stack: $VPC_STACK_NAME"

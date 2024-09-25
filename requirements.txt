@@ -1,0 +1,10 @@
+# Requirements for the project
+
+kaggle                   # Kaggle API for dataset retrieval
+zipfile36                # Backport of zipfile for Python versions < 3.7
+pandas                   # Data manipulation and analysis library
+SQLAlchemy               # SQL toolkit and Object-Relational Mapping (ORM) library
+psycopg2-binary         # PostgreSQL adapter for Python
+# Optional libraries for Jupyter Notebook and data visualization
+jupyter                  # Jupyter Notebook
+notebook                 # Notebook interface for Jupyter

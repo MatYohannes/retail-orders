@@ -92,14 +92,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
 4. Additional details you want to include in any of the sections.
 
 Feel free to modify or expand any sections based on your project specifics!
-
-
-
-# Create Secret via Secrets Manager
-
-```shell
-aws secretsmanager create-secret \
---name MyRdsRetailSecret \
---description "My retail-orders password." \
---secret-string "{\"password\":\"mypassword\"}"
-```

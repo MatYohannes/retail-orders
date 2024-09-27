@@ -24,6 +24,7 @@ This project utilizes the Kaggle API to download a dataset, processes the data u
 - Kaggle API
 
 ## Project Structure
+```
 /YourProjectDirectory
 │
 ├── Build-files
@@ -43,7 +44,7 @@ This project utilizes the Kaggle API to download a dataset, processes the data u
 │   └── query_results_5.csv  # CSV file of SQL queried dataframe 5
 │
 └── data_processing.ipynb   # Jupyter Notebook with data processing work
-
+```
 ## Setup Instructions
 1. **Clone the repository**:
    ```bash
